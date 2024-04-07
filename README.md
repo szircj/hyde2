@@ -77,7 +77,11 @@ Mientras se compila el archivo fuente, la macro sin función `ADOBE_TOOL_HYDE` s
 # Ejemplos:
 
 Para generar JSON:
-```./hyde -use-system-clang ../test_files/classes.cpp --```
+```
+./hyde -use-system-clang ../test_files/classes.cpp --
+```
 
 Para validar YAML preexistente:
-```./hyde -use-system-clang -hyde-yaml-dir=/path/to/output -hyde-validate ../test_files/classes.cpp```
+```
+./hyde -use-system-clang -hyde-yaml-dir=/path/to/output -hyde-validate ../test_files/classes.cpp
+```
