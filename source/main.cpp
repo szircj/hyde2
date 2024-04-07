@@ -81,7 +81,7 @@ std::vector<std::string> make_absolute(std::vector<std::string> paths) {
     Command line arguments section. These are intentionally global. See:
         https://llvm.org/docs/CommandLine.html
 */
-enum ToolMode { ToolModeJSON, ToolModeYAMLValidate, ToolModeYAMLUpdate, ToolModeFixupSubfield };
+enum ToolMode { ToolModeJSON, ToolModeYAMLValidate, ToolModeYAMLUpdate };
 enum ToolDiagnostic { ToolDiagnosticQuiet, ToolDiagnosticVerbose, ToolDiagnosticVeryVerbose };
 static llvm::cl::OptionCategory MyToolCategory(
     "Hyde is a tool to scan library headers to ensure documentation is kept up to\n"
