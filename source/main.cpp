@@ -501,6 +501,21 @@ int main(int argc, const char** argv) try {
     if (ToolDiagnostic == ToolDiagnosticVeryVerbose) {
         arguments.emplace_back("-v");
     }
+    /**************************************************************************************************/
+// Hyde may accumulate many "fixups" throughout its lifetime. The first of these so far is to move
+// the hyde fields under a `hyde` subfield in the YAML, allowing for other tools' fields to coexist
+// under other values in the same have file.
+bool fixup_have_file_subfield(const std::filesystem::path& path) {
+    // Passing `true` is what's actually causing the fixup.
+    const auto parsed = hyde::parse_documentation(path, true);
+    const auto failure = parsed._error || hyde::write_documentation(parsed, path);
+
+    if (failure) {
+        std::cerr << "Failed to fixup " << path << '\n';
+    }
+
+    return failure;
+}
 
 #if HYDE_PLATFORM(APPLE)
     //
