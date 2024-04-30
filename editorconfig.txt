@@ -2,7 +2,9 @@
 # the way code is seen on GitHub (PRs, etc.) by making it respect tabs as being
 # four spaces.
 
+
 root = true
+
 
 # Matches multiple files with brace expansion notation
 [*.{c,cc,cpp,cxx,h,hh,hpp,hxx,mm}]
